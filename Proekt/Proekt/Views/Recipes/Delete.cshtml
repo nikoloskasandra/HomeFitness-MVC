@@ -1,0 +1,72 @@
+﻿@model Proekt.Models.Recipes
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<section class="banner-area relative about-banner" id="home">
+    <img class="cta-img img-fluid" src="~/Content/img/v.png" style="max-width:680px" alt="">
+    <div class="overlay overlay-bg"></div>
+    <div class="container">
+        <div class="row d-flex align-items-center justify-content-center">
+            <div class="about-content col-lg-12">
+
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<div class="row">
+    <div class="col">
+        </br>
+        </br>
+        </br>
+
+    </div>
+</div>
+
+<div class="container">
+<h2>Delete Recipe</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <hr />
+    <div class="row">
+        <div class="col">
+            <!--Recipes Card-->
+            <div class="card mb-3">
+                <img src="@Model.Image" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">@Model.Name</h5>
+                    <h6> @Html.DisplayNameFor(model => model.Ingredients)</h6>
+                    <p class="card-text">@Model.Ingredients</p>
+                    <h6> @Html.DisplayNameFor(model => model.Description)</h6>
+                    <p class="card-text">@Model.Description</p>
+
+                </div>
+                <div class="card-footer">
+                    @using (Html.BeginForm())
+                    {
+                        @Html.AntiForgeryToken()
+
+                    <div class="form-actions no-color">
+                        <input type="submit" value="Delete" class="btn btn-danger btn-block" />
+                        <a href="/Recipes/Index" class="btn btn-default btn-outline-dark" style="margin-top:4px;">Back</a>
+                        
+                    </div>
+                    }
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+
+</div>
+</div>

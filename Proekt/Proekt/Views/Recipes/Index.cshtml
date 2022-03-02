@@ -1,0 +1,64 @@
+﻿@model IEnumerable<Proekt.Models.Recipes>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<section class="banner-area relative about-banner" id="home">
+    <img class="cta-img img-fluid" src="~/Content/img/w.jpg" alt="">
+    <div class="overlay overlay-bg"></div>
+    <div class="container">
+        <div class="row d-flex align-items-center justify-content-center">
+            <div class="about-content col-lg-12">
+               
+               
+            </div>
+        </div>
+    </div>
+</section>
+<div class="row">
+    <div class="col">
+        </br>
+        </br>
+        </br>
+      
+    </div>
+</div>
+
+<div class="container">
+   
+    <div class="row">
+
+        @foreach (var item in Model)
+        {
+
+            <div class="col">
+                <div class="card" style="width: 18rem;margin-bottom:10px;">
+                    <img src="@item.Image" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">@item.Name</h5>
+                        @Html.ActionLink("Read mode..", "Details", new { id = item.Id }, new { @class = "btn btn-primary" })
+                    </div>
+                    <div class="card-footer">
+                        @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-default btn-outline-dark" })
+
+                        @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-default  btn-outline-dark" })
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        }
+
+
+    </div>
+    <p>
+        <a href="/Recipes/Create" class="btn btn-success">Create New Recipe</a>
+    </p>
+
+</div>
+

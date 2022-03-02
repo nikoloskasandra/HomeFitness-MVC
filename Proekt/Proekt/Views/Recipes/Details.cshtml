@@ -1,0 +1,55 @@
+﻿@model Proekt.Models.Recipes
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<section class="banner-area relative about-banner" id="home">
+    <img class="cta-img img-fluid" src="~/Content/img/v2.png" alt="">
+    <div class="overlay overlay-bg"></div>
+    <div class="container">
+        <div class="row d-flex align-items-center justify-content-center">
+            <div class="about-content col-lg-12">
+
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<div class="row">
+    <div class="col">
+        </br>
+        </br>
+        </br>
+        
+    </div>
+</div>
+
+<div class="container">
+       <div class="row">
+        <div class="col">
+            <!--Recipes Card-->
+            <div class="card mb-3">
+                <img src="@Model.Image" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">@Model.Name</h5>
+                    <h6> @Html.DisplayNameFor(model => model.Ingredients)</h6>
+                    <p class="card-text">@Model.Ingredients</p>
+                    <h6> @Html.DisplayNameFor(model => model.Description)</h6>
+                    <p class="card-text">@Model.Description</p>
+
+                </div>
+                <div class="card-footer">
+                    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }, new { @class = "btn btn-default btn-outline-dark" })
+                    <a href="/Recipes/Index" class="btn btn-default btn-outline-dark">Back</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+</div>
+
